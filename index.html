@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Generative Art</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="controls-overlay">
+        <div class="controls">
+            <button id="generate">Generate New</button>
+            <button id="save">Save as PNG</button>
+            <div class="sliders">
+                <div class="control-group">
+                    <label for="complexity">Complexity</label>
+                    <input type="range" id="complexity" min="1" max="100" value="50">
+                </div>
+                <div class="control-group">
+                    <label for="colorVariation">Color Variation</label>
+                    <input type="range" id="colorVariation" min="0" max="100" value="30">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
