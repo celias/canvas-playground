@@ -5,25 +5,26 @@
 }
 
 body {
-    overflow: hidden;
-    background-color: #1a1a1a;
+    min-height: 100vh;
     font-family: 'Arial', sans-serif;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
 canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    border: 1px solid #333;
     background-color: #1a1a1a;
-}
-
-.controls-overlay {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
+    /* width: 800px;
+    height: 800px; */
 }
 
 .controls {
@@ -33,7 +34,7 @@ canvas {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    backdrop-filter: blur(5px);
+    width: 800px;
 }
 
 button {
@@ -55,7 +56,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 200px;
 }
 
 .control-group {
@@ -72,4 +72,15 @@ input[type="range"] {
 label {
     font-size: 14px;
     color: #fff;
+}
+
+@media (max-width: 840px) {
+    canvas, .controls {
+        width: 100%;
+    }
+    
+    canvas {
+        height: auto;
+        aspect-ratio: 1;
+    }
 }

@@ -1,7 +1,7 @@
 // src/main.js
-import { randomInt, getScreenDimensions } from './utils/helpers.js';
-import { generateFlowField, generateCircularPattern, generateRecursivePattern } from './patterns.js';
-import { createRenderer } from './renderer.js';
+import { randomInt, getScreenDimensions } from './src/utils/helpers.js';
+import { generateFlowField, generateCircularPattern, generateRecursivePattern } from './src/patterns.js';
+import { createRenderer } from './src/renderer.js';
 
 // Configuration management (pure)
 const createConfig = (width, height, complexity, colorVariation) => ({
@@ -26,22 +26,20 @@ const selectPattern = (config) => {
 const createApp = (canvas) => {
     const renderer = createRenderer(canvas);
     
-    // Canvas setup (side effect isolated)
-    const setupCanvas = () => {
-        const { width, height, dpr } = getScreenDimensions();
-        
-        // Set actual pixel dimensions
-        canvas.width = width;
-        canvas.height = height;
-        
-        // Scale the context to handle device pixel ratio
-        const ctx = canvas.getContext('2d');
-        ctx.scale(dpr, dpr);
-        
-        // Set CSS dimensions
-        canvas.style.width = `${window.innerWidth}px`;
-        canvas.style.height = `${window.innerHeight}px`;
-    };
+  
+
+const setupCanvas = () => {
+    const dpr = window.devicePixelRatio || 1;
+    const size = 800 * dpr;
+    
+    // Set actual pixel dimensions
+    canvas.width = size;
+    canvas.height = size;
+    
+    // Scale the context to handle device pixel ratio
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+};
     
     // DOM event handlers (side effects isolated)
     const setupEventListeners = () => {
@@ -97,3 +95,5 @@ window.addEventListener('load', () => {
     const app = createApp(canvas);
     app.init();
 });
+
+
