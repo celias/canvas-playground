@@ -1,4 +1,4 @@
-// js/utils.js
+// js/helpers.js
 
 // Pure random number generators
 export const random = (min, max) => Math.random() * (max - min) + min;

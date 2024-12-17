@@ -1,5 +1,5 @@
-// js/main.js
-import { randomInt, getScreenDimensions } from './utils.js';
+// src/main.js
+import { randomInt, getScreenDimensions } from './utils/helpers.js';
 import { generateFlowField, generateCircularPattern, generateRecursivePattern } from './patterns.js';
 import { createRenderer } from './renderer.js';
 

@@ -1,5 +1,5 @@
-// js/patterns.js
-import { random, randomInt, generateColor, Vector, createCircle, createPolygon, generatePoints, createNoiseValue } from './utils.js';
+// patterns.js
+import { randomInt, generateColor, Vector, createCircle, createPolygon, generatePoints, createNoiseValue } from './utils/helpers.js';
 
 // Helper for creating drawing instructions
 const createDrawingInstructions = (shape, style) => ({
