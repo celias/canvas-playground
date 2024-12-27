@@ -3,6 +3,7 @@
     "vite": "^6.0.3"
   },
   "dependencies": {
+    "canvas-sketch-cli": "^1.15.0",
     "p5": "^1.11.2"
   },
   "scripts": {
